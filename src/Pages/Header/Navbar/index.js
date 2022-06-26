@@ -1,25 +1,27 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import * as Icon from "react-icons/bs";
-import {
-  Navbar,
-  Container,
-  Nav,
-  NavDropdown,
-  DropdownButton,
-  Dropdown,
-} from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 export default class index extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      theme: !props.theme ? "light" : props.theme,
+      themeF: !props.themeF ? this.theme : props.themeF,
+      icons: "BsFillGridFill",
+    };
+  }
   render() {
     const userIcons = (
       <>
-        <Icon.BsFillPersonFill className="me-1"></Icon.BsFillPersonFill>
+        <i class="bi-person-circle me-1"></i>
         JhonDoe
       </>
     );
     return (
       <div>
-        <Navbar className="navbar-dark" bg="dark" expand="lg">
+        <Navbar variant={this.state.themeF} bg={this.state.theme} expand="lg">
           <Container>
             <Navbar.Brand href="#home">
               <img
@@ -37,14 +39,14 @@ export default class index extends Component {
                   className="d-flex align-items-center justify-content-center"
                   href="#home"
                 >
-                  <Icon.BsFillGridFill className="me-1"></Icon.BsFillGridFill>
+                  <i class="bi-grid-fill me-1"></i>
                   Dashboard
                 </Nav.Link>
                 <Nav.Link
                   className="d-flex align-items-center justify-content-center"
                   href="#link"
                 >
-                  <Icon.BsServer className="me-1"></Icon.BsServer>
+                  <i class="bi-server me-1"></i>
                   Master
                 </Nav.Link>
                 <NavDropdown title="Other" id="basic-nav-dropdown">
@@ -69,11 +71,6 @@ export default class index extends Component {
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.1">LogOut</NavDropdown.Item>
                 </NavDropdown>
-                {/* <DropdownButton variant="dark" drop="down" title={userPicture}>
-                  <Dropdown.Item eventKey="4">User Options</Dropdown.Item>
-                  <Dropdown.Divider />
-                  <Dropdown.Item eventKey="4">LogOut</Dropdown.Item>
-                </DropdownButton> */}
               </Nav>
             </Navbar.Collapse>
           </Container>
