@@ -11,21 +11,15 @@ import {
 } from "react-bootstrap";
 export default class index extends Component {
   render() {
-    const UserIcons = (
-      <Icon.BsFillPersonFill className="text-light"></Icon.BsFillPersonFill>
-    );
-    const userPicture = (
-      <img
-        src="https://www.mumbojumboentertainment.com/images/users/user-john-doe-437x437.jpg"
-        width="40"
-        height="40"
-        className="d-inline-block align-top rounded-circle"
-        alt=""
-      />
+    const userIcons = (
+      <>
+        <Icon.BsFillPersonFill className="me-1"></Icon.BsFillPersonFill>
+        JhonDoe
+      </>
     );
     return (
       <div>
-        <Navbar className="navbar-dark" bg="primary" expand="lg">
+        <Navbar className="navbar-dark" bg="dark" expand="lg">
           <Container>
             <Navbar.Brand href="#home">
               <img
@@ -43,7 +37,7 @@ export default class index extends Component {
                   className="d-flex align-items-center justify-content-center"
                   href="#home"
                 >
-                  <Icon.BsFillGridFill className="text-light me-1"></Icon.BsFillGridFill>
+                  <Icon.BsFillGridFill className="me-1"></Icon.BsFillGridFill>
                   Dashboard
                 </Nav.Link>
                 <Nav.Link
@@ -68,22 +62,18 @@ export default class index extends Component {
                 </NavDropdown>
               </Nav>
               <Nav className="ml-auto" activeKey="Users">
-                {/* <NavDropdown
-                  drop="down"
-                  title={userPicture}
-                  id="basic-nav-dropdown"
-                >
-                  <NavDropdown.Item href="#action/3.3">LogOut</NavDropdown.Item>
-                </NavDropdown> */}
-                <DropdownButton
-                  className="my-auto"
-                  align="end"
-                  title={userPicture}
-                >
+                <NavDropdown title={userIcons} id="basic-nav-dropdown">
+                  <NavDropdown.Item href="#action/3.1">
+                    User Options
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action/3.1">LogOut</NavDropdown.Item>
+                </NavDropdown>
+                {/* <DropdownButton variant="dark" drop="down" title={userPicture}>
                   <Dropdown.Item eventKey="4">User Options</Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item eventKey="4">LogOut</Dropdown.Item>
-                </DropdownButton>
+                </DropdownButton> */}
               </Nav>
             </Navbar.Collapse>
           </Container>
