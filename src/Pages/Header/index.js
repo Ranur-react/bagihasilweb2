@@ -5,7 +5,12 @@ export default class Header extends Component {
     super(props);
     this.state = {
       menuLeft: [
-        { lable: "Dashboard", icon: "grid-fill", destLink: "/home",subMenu: [] },
+        {
+          lable: "Dashboard",
+          icon: "grid-fill",
+          destLink: "/home",
+          subMenu: [],
+        },
         {
           lable: "Master",
           icon: "hdd-stack",
@@ -23,10 +28,10 @@ export default class Header extends Component {
             },
           ],
         },
-        { lable: "Other", icon: "infinity", destLink: "",subMenu: [] },
-        { lable: "About", icon: "info-circle", destLink: "",subMenu: [] },
+        { lable: "Other", icon: "infinity", destLink: "", subMenu: [] },
+        { lable: "About", icon: "info-circle", destLink: "", subMenu: [] },
       ],
-      menuRight: [{ lable: "Jhone Doe", type: "Drop", icon: "person-circle" }],
+      menuRight: [{ lable: "Jhone Doe", icon: "person-circle" }],
     };
   }
   render() {
