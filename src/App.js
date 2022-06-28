@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import * as Bcom from "./Bcomponents";
 
-import Pages from "./Pages";
 export default class App extends Component {
   render() {
     return (
       <div>
-        <Pages />
+        <Bcom.Header />
+        <Bcom.Content />
+        <Bcom.Footer />
       </div>
     );
   }
