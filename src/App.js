@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import * as Bcom from "./Bcomponents";
+import * as Hcom from "./Hcomponents";
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <Bcom.Header />
-        <Bcom.Content />
-        <Bcom.Footer />
+        <Hcom.Header AppTitle={null} AppIcons={"BAGIH"} />
+        <Hcom.Navbar />
+        <Hcom.Content />
+        <Hcom.Footer />
       </div>
     );
   }
